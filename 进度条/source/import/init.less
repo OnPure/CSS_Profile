@@ -1,0 +1,58 @@
+//使用REM时，用的变量
+@getRem : 16rem ; 
+//初始化
+* {
+    margin: 0 auto;
+    padding: 0;
+    outline: none; 
+}
+html, body {
+    min-width: 320px;
+    max-width: 640px;
+    height: 100%;
+}
+body {
+    //Microsoft Yahei微软雅黑
+    //PingFang SC中文字体萍方
+    //Helvetica是苹果电脑的默认字体
+    //Roboto是为Android操作系统设计的一个无衬线字体家族
+    //Heiti SC ios7 常州華文
+    //STHeiti是苹果手机默认字体
+    font-family: 'Microsoft YaHei','PingFang SC','Helvetica Neue','Helvetica', 'Roboto', 'Heiti SC', 'STHeiTi', 'Arial', 'sans-serif';
+    //点击元素,如a标记，会默认在标记上显示一个半透明的背景  用这行语句可以消除背景
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+img {
+    border:0;
+}
+ul {
+    list-style:none;
+}
+input {
+    //去除苹果手机默认的样式
+    -webkit-appearance: none;
+}
+a{
+    text-decoration: none;
+}
+
+/*定义通用css3动画 begin*/
+ .Anima(@name:fadeIn,@duration:.5s,@speed:ease-out,@delay:.5s,@mode:forwards){
+    -webkit-animation: @name @duration @speed @delay @mode;
+    animation: @name @duration @speed @delay @mode;
+}
+
+//使用REM时，使用的媒体查询，如使用JS FOR REM将下面代码注释掉
+@media screen and (min-width : 320px){html{font-size:16px;}html, body {max-width: 320px;}}
+@media screen and (min-width : 360px){html{font-size: 18px;}html, body {max-width: 360px;}}
+@media screen and (min-width : 375px){html{font-size: 18.75px;}html, body {max-width: 375px;}}
+@media screen and (min-width : 384px){html{font-size: 19.2px;}html, body {max-width: 384px;}}
+@media screen and (min-width : 412px){html{font-size: 20.6px;}html, body {max-width: 412px;}}
+@media screen and (min-width : 414px){html{font-size: 20.7px;}html, body {max-width: 414px;}}
+@media screen and (min-width : 480px){html{font-size: 24px;}html, body {max-width: 480px;}}
+@media screen and (min-width : 568px){html{font-size: 28.4px;}html, body {max-width: 568px;}}
+@media screen and (min-width : 600px){html{font-size: 30px;}html, body {max-width: 600px;}}
+@media screen and (min-width : 640px){html{font-size:32px;}html, body {max-width: 640px;}}
+@media screen and (min-width : 667px){html{font-size: 33.35px;}html, body {max-width: 667px;}}
+//@media screen and (min-width : 732px){html{font-size: 36.6px;}html, body {max-width: 732px;}}
+//@media screen and (min-width : 736px){html{font-size: 36.8px;}html, body {max-width: 736px;}}

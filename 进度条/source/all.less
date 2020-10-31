@@ -1,0 +1,65 @@
+// 引入 预加载样式
+@import "import/init";
+* {
+    margin: 0 auto;
+    padding: 0;
+    outline: 0;
+    touch-action: pan-y;
+}
+.progress {
+    margin-top: 100/@getRem;
+    width: 255/@getRem;
+    height: 30/@getRem;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 20/@getRem;
+    padding-top: 5/@getRem;
+    .progress-shadow {
+        width: 240/@getRem;
+        height: 20/@getRem;
+        border: 3px solid #a5a39d;
+        border-radius: 30/@getRem;
+        background: #d9eebe;
+        .progress-bar {
+            position: relative;
+            margin-left: 0; //进度条靠左
+            height: 20/@getRem;
+            border-radius: 30/@getRem;                
+            -webkit-box-shadow: inset -2.121/@getRem -2.121/@getRem 2/@getRem rgba(0, 0, 0, .2);
+            box-shadow: inset -2.121/@getRem -2.121/@getRem 2/@getRem rgba(0, 0, 0, .2);
+            &.active {
+                animation: progress-bar-stripes 0.8s linear infinite reverse;
+            }
+        }
+        .progress-bar-striped {
+//          普通进度条写法
+//          background: linear-gradient(45deg, #f0c105 25%, #ffcd05 25%, #ffcd05 50%, #f0c105 50%, #f0c105 75%, #ffcd05 75%, #ffcd05);
+//          -webkit-background-size: 40px 40px;
+//          background-size: 40px 40px;
+//          密集进度条写法
+            background: repeating-linear-gradient(135deg,#f0c105,#f0c105 3.2/@getRem,
+            #ffcd05 0,#ffcd05 6.4/@getRem);
+            background-size: 118.4/@getRem 20/@getRem;
+        }
+        .progress-value {
+            width: 53/@getRem;
+            height: 32/@getRem;
+            line-height: 26/@getRem;
+            font-size: 12/@getRem;
+            font-weight: bold;
+            color: #cc792f;
+            background-position: -157/@getRem -1374/@getRem;
+            position: absolute;
+            top: -39/@getRem;
+            right: -16/@getRem;
+            text-align: center;
+        }
+    }
+}
+@keyframes progress-bar-stripes {
+    from {
+        background-position: 60/@getRem 0;
+    }
+    to {
+        background-position: 0 0;
+    }
+}
